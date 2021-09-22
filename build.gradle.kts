@@ -23,7 +23,9 @@ dependencies {
     implementation("com.beust:klaxon:5.5")
 
     /* Logging */
-    implementation("org.lighthousegames:logging-jvm:1.0.0")
+    //ANDROID PORT
+    //implementation("org.lighthousegames:logging-jvm:1.0.0")
+    //ANDROID POR
     implementation("org.slf4j:slf4j-simple:1.7.32")
 
     /* Kotlin */

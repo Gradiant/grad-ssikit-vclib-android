@@ -2,7 +2,9 @@ package id.walt.vclib.registry
 
 import id.walt.vclib.Defaults
 import id.walt.vclib.model.VerifiableCredential
-import org.lighthousegames.logging.logging
+//ANDROID PORT
+//import org.lighthousegames.logging.logging
+//ANDROID PORT
 import kotlin.reflect.KClass
 
 class CredentialTypeAlreadyRegisteredException(registration: VcTypeRegistry.TypeRegistration) :
@@ -16,7 +18,9 @@ object VcTypeRegistry {
         val isPrimary: Boolean = true
     )
 
-    private val log = logging()
+    //ANDROID PORT
+    //private val log = logging()
+    //ANDROID PORT
     private val registry = HashMap<Int, TypeRegistration>()
 
     private fun computeKey(type: List<String>) = type.sorted().hashCode()
@@ -39,7 +43,9 @@ object VcTypeRegistry {
     }
 
     fun register(metadata: VerifiableCredentialMetadata, vc: KClass<out VerifiableCredential>) {
-        log.info { "Registering ${vc.simpleName}..." }
+        //ANDROID PORT
+        //log.info { "Registering ${vc.simpleName}..." }
+        //ANDROID PORT
 
         registerDefinition(metadata.type, TypeRegistration(vc, metadata))
 

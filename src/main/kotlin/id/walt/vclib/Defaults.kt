@@ -1,12 +1,15 @@
 package id.walt.vclib
 
 import id.walt.vclib.vclist.*
-import org.lighthousegames.logging.logging
-
+//ANDROID PORT
+//import org.lighthousegames.logging.logging
+//ANDROID PORT
 
 object Defaults {
 
-    private val log = logging()
+    //ANDROID PORT
+    //private val log = logging()
+    //ANDROID PORT
 
     private val defaults = lazy {
         VcLibManager.register<PermanentResidentCard>(PermanentResidentCard)
@@ -22,7 +25,9 @@ object Defaults {
     fun loadVcLibDefaults() {
         // Register default types
         if (!defaults.isInitialized()) {
-            log.info { "Registering default templates" }
+            //ANDROID PORT
+            //log.info { "Registering default templates" }
+            //ANDROID PORT
             defaults.value
         }
     }
