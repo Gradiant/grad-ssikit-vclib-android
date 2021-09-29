@@ -14,7 +14,6 @@ data class VerifiablePresentation(
     @NestedVCs var verifiableCredential: List<VerifiableCredential>,
     @Json(serializeNull = false) var proof: Proof? = null
 ) : VerifiableCredential(type) {
-
     companion object : VerifiableCredentialMetadata(
         type = listOf("VerifiablePresentation"),
         template = {
