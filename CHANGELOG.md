@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [1.4.9] - 2021-09-25
+
+-   As issuanceDate and expirationDate, validFrom may now have also a non serialized null value according EBSI context.
+
+## [1.4.8] - 2021-09-24
+
+-   Updated VP data model according to EBSI spec
+-   expose optional id field on VerifiableCredential abstract interface
+
 ## [1.4.7] - 2021-09-13
 
 -   Fix JWT claim named "vp" for verifiable presentation according to EU spec
@@ -86,7 +95,9 @@ All notable changes to this project will be documented in this file.
 
 -   Initial release
 
-[Unreleased]: https://github.com/walt-id/waltid-ssikit-vclib/compare/1.4.7...HEAD
+[Unreleased]: https://github.com/walt-id/waltid-ssikit-vclib/compare/1.4.9...HEAD
+
+[1.4.9]: https://github.com/walt-id/waltid-ssikit-vclib/compare/1.4.8...1.4.9
 
 [1.4.7]: https://github.com/walt-id/waltid-ssikit-vclib/compare/1.4.6...1.4.7
 

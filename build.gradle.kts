@@ -7,7 +7,7 @@ plugins {
 }
 
 group = "id.walt"
-version = "1.4.8-SNAPSHOT"
+version = "1.4-SNAPSHOT"
 
 
 repositories {
@@ -25,7 +25,7 @@ dependencies {
     /* Logging */
     //ANDROID PORT
     //implementation("org.lighthousegames:logging-jvm:1.0.0")
-    //ANDROID POR
+    //ANDROID PORT
     implementation("org.slf4j:slf4j-simple:1.7.32")
 
     /* Kotlin */
