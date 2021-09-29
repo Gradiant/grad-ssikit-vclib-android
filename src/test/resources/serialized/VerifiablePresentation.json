@@ -27,6 +27,7 @@
         "verificationMethod": "did:ebsi-eth:000001234#key-1"
       },
       "type": [
+        "VerifiableCredential",
         "VerifiableAuthorization"
       ]
     },
@@ -59,7 +60,6 @@
     }
   ],
   "type": [
-    "VerifiableCredential",
     "VerifiablePresentation"
   ]
 }
