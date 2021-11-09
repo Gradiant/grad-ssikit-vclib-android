@@ -11,6 +11,8 @@ import id.walt.vclib.schema.SchemaService.JsonIgnore
 import java.text.SimpleDateFormat
 import java.util.*
 
+private val dateFormat = SimpleDateFormat("YYYY-MM-dd'T'HH:mm:ss'Z'").also { it.timeZone = TimeZone.getTimeZone("UTC") }
+
 data class VerifiableDiploma(
     @Json(name = "@context") var context: List<String> = listOf("https://www.w3.org/2018/credentials/v1"),
     @Json(serializeNull = false) override var id: String? = null, // education#higherEducation#51e42fda-cb0a-4333-b6a6-35cb147e1a88
@@ -92,17 +94,16 @@ data class VerifiableDiploma(
     @Json(ignored = true)
     override var jwt: String? = null
         set(value) {
-        field = value.also {
-            val dateFormat = SimpleDateFormat("YYYY-MM-dd'T'HH:mm:ss'Z'")
-            val jwtClaimsSet = SignedJWT.parse(value).jwtClaimsSet
-            id = id ?: jwtClaimsSet.jwtid
-            issuer = issuer ?: jwtClaimsSet.issuer
-            issuanceDate = issuanceDate ?: jwtClaimsSet.issueTime?.let { dateFormat.format(it) }
-            validFrom = validFrom ?: jwtClaimsSet.notBeforeTime?.let { dateFormat.format(it) }
-            expirationDate = expirationDate ?: jwtClaimsSet.expirationTime?.let { dateFormat.format(it) }
-            credentialSubject?.also { it.id = it.id ?: jwtClaimsSet.subject }
+            field = value.also {
+                val jwtClaimsSet = SignedJWT.parse(value).jwtClaimsSet
+                id = id ?: jwtClaimsSet.jwtid
+                issuer = issuer ?: jwtClaimsSet.issuer
+                issuanceDate = issuanceDate ?: jwtClaimsSet.issueTime?.let { dateFormat.format(it) }
+                validFrom = validFrom ?: jwtClaimsSet.notBeforeTime?.let { dateFormat.format(it) }
+                expirationDate = expirationDate ?: jwtClaimsSet.expirationTime?.let { dateFormat.format(it) }
+                credentialSubject?.also { it.id = it.id ?: jwtClaimsSet.subject }
+            }
         }
-    }
 
     data class CredentialSubject(
         @Json(serializeNull = false) var id: String? = null,

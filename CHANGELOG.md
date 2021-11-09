@@ -4,6 +4,24 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [1.5.3] - 2021-11-07
+
+-   Added DNSpublicKey to GaiaxCredential
+
+## [1.5.2] - 2021-11-06
+
+-   Removed proofs from templates
+
+## [1.5.1] - 2021-11-06
+
+-   Added GaiaxCredential
+-   Added credentialStatus (CredentialStatusList2020) to GaiaxCredential
+
+## [1.5.0] - 2021-11-02
+
+-   Fix/ebsi jwt to credential
+-   Fix/get verifiable credential string
+
 ## [1.4.9] - 2021-09-25
 
 -   As issuanceDate and expirationDate, validFrom may now have also a non serialized null value according EBSI context.
@@ -95,7 +113,17 @@ All notable changes to this project will be documented in this file.
 
 -   Initial release
 
-[Unreleased]: https://github.com/walt-id/waltid-ssikit-vclib/compare/1.4.9...HEAD
+[Unreleased]: https://github.com/walt-id/waltid-ssikit-vclib/compare/1.5.3...HEAD
+
+[1.5.3]: https://github.com/walt-id/waltid-ssikit-vclib/compare/1.5.2...1.5.3
+
+[1.5.2]: https://github.com/walt-id/waltid-ssikit-vclib/compare/1.5.1...1.5.2
+
+[1.5.1]: https://github.com/walt-id/waltid-ssikit-vclib/compare/1.5.0...1.5.1
+
+[1.5.0]: https://github.com/walt-id/waltid-ssikit-vclib/compare/1.5.0...1.5.0
+
+[1.5.0]: https://github.com/walt-id/waltid-ssikit-vclib/compare/1.4.9...1.5.0
 
 [1.4.9]: https://github.com/walt-id/waltid-ssikit-vclib/compare/1.4.8...1.4.9
 
