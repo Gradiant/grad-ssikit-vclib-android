@@ -1,6 +1,17 @@
+# Android SSI Kit VCLib
+
+This is the Android Ported Version of the Walt.ID SSI Kit VCLib, developed by Gradiant.
+
+## Changes
+
+1. build.gradle.kts -> JvmTarget for kotlin must be "11".
+
+2. build.gradle.kts -> commented logging library "org.lighthousegames:logging-jvm:1.0.0" since it uses a java library not presented in java 11. This leads to comment all appearances of this library in the code: 
+* src/main/kotlin/id/walt/vclib/Defaults.kt
+* src/main/kotlin/id/walt/vclib/registry/VcTypeRegistry.kt
+
 # waltid-ssikit-vclib
 Typesafe implementation of W3C Verifiable Credentials in order to facilitate interoperability among various applications.
-
 
 ### Setup
 
@@ -68,12 +79,3 @@ val issuer = when (credential) {
 
 The VcLib by walt.id is Open Source software released under the [Apache 2.0 license](https://www.apache.org/licenses/LICENSE-2.0.html).
 
-# Android Port
-
-## Changes
-
-1. build.gradle.kts -> JvmTarget for kotlin must be "11".
-
-2. build.gradle.kts -> commented logging library "org.lighthousegames:logging-jvm:1.0.0" since it uses a java library not presented in java 11. This leads to comment all appearances of this library in the code: 
-* src/main/kotlin/id/walt/vclib/Defaults.kt
-* src/main/kotlin/id/walt/vclib/registry/VcTypeRegistry.kt
