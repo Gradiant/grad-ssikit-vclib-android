@@ -2,6 +2,12 @@
 
 This is the Android Ported Version of the Walt.ID SSI Kit VCLib, developed by Gradiant.
 
+- This repository demonstrates how to integrate the Android SSI Kit Project inside an Android Application: https://github.com/Gradiant/grad-ssikit-example-android 
+- Android Ported Version of the ssikit: https://github.com/Gradiant/grad-ssikit-android
+- Android Ported Version of the servicematrix: https://github.com/Gradiant/grad-servicematrix-android
+
+- Original Walt.ID SSI Kit: https://github.com/walt-id/waltid-ssikit 
+
 ## Changes
 
 1. build.gradle.kts -> JvmTarget for kotlin must be "11".
