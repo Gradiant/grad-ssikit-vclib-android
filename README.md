@@ -1,4 +1,4 @@
-# Android SSI Kit VCLib
+# Android SSI Kit VCLib - Reviewing
 
 This is the Android Ported Version of the Walt.ID SSI Kit VCLib, developed by Gradiant.
 
