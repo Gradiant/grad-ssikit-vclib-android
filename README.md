@@ -8,7 +8,7 @@ This is the Android Ported Version of the Walt.ID SSI Kit VCLib, developed by Gr
 
 - Original Walt.ID SSI Kit: https://github.com/walt-id/waltid-ssikit 
 
-## Changes
+## Changelog
 
 1. build.gradle.kts -> JvmTarget for kotlin must be "11".
 
@@ -19,18 +19,19 @@ This is the Android Ported Version of the Walt.ID SSI Kit VCLib, developed by Gr
 # waltid-ssikit-vclib
 Typesafe implementation of W3C Verifiable Credentials in order to facilitate interoperability among various applications.
 
+
 ### Setup
 
 Add the dependency using Gradle:
 
-    implementation("id.walt:waltid-ssikit-vclib:1.4.9")
+    implementation("id.walt:waltid-ssikit-vclib:1.6.0")
     
 or Maven:
 
     <dependency>
         <groupId>id.walt</groupId>
         <artifactId>waltid-ssikit-vclib</artifactId>
-        <version>1.4.9</version>
+        <version>1.6.0</version>
     </dependency>
     
 ### Create a credential

@@ -1,4 +1,4 @@
-package id.walt.vclib.vclist
+package id.walt.vclib.credentials
 
 import com.beust.klaxon.Json
 import com.nimbusds.jwt.SignedJWT
@@ -8,13 +8,16 @@ import id.walt.vclib.model.Proof
 import id.walt.vclib.model.VerifiableCredential
 import id.walt.vclib.registry.VerifiableCredentialMetadata
 import id.walt.vclib.schema.SchemaService.JsonIgnore
+import id.walt.vclib.schema.SchemaService.PropertyName
+import id.walt.vclib.schema.SchemaService.Required
 import java.text.SimpleDateFormat
 import java.util.*
 
 private val dateFormat = SimpleDateFormat("YYYY-MM-dd'T'HH:mm:ss'Z'").also { it.timeZone = TimeZone.getTimeZone("UTC") }
 
 data class VerifiableDiploma(
-    @Json(name = "@context") var context: List<String> = listOf("https://www.w3.org/2018/credentials/v1"),
+    @Json(name = "@context") @field:PropertyName(name = "@context") @field:Required
+    var context: List<String> = listOf("https://www.w3.org/2018/credentials/v1"),
     @Json(serializeNull = false) override var id: String? = null, // education#higherEducation#51e42fda-cb0a-4333-b6a6-35cb147e1a88
     @Json(serializeNull = false) var issuer: String? = null, // did:ebsi:2LGKvDMrNUPR6FhSNrXzQQ1h295zr4HwoX9UqvwAsenSKHe9
     @Json(serializeNull = false) var issuanceDate: String? = null, // 2020-11-03T00:00:00Z
@@ -30,9 +33,10 @@ data class VerifiableDiploma(
         type = listOf("VerifiableCredential", "VerifiableAttestation", "VerifiableDiploma"),
         template = {
             VerifiableDiploma(
-                id = "education#higherEducation#${UUID.randomUUID()}",
+                id = "education#higherEducation#392ac7f6-399a-437b-a268-4691ead8f176",
                 issuer = "did:ebsi:2A9BZ9SUe6BatacSpvs1V5CdjHvLpQ7bEsi2Jb6LdHKnQxaN",
                 issuanceDate = "2021-08-31T00:00:00Z",
+                expirationDate = "2022-08-31T00:00:00Z",
                 validFrom = "2021-08-31T00:00:00Z",
                 credentialSubject = CredentialSubject(
                     id = "did:ebsi:2AEMAqXWKYMu1JHPAgGcga4dxu7ThgfgN95VyJBJGZbSJUtp",
@@ -55,8 +59,7 @@ data class VerifiableDiploma(
                         identifier = "https://certificate-demo.bcdiploma.com/check/87ED2F2270E6C41456E94B86B9D9115B4E35BCCAD200A49B846592C14F79C86BV1Fnbllta0NZTnJkR3lDWlRmTDlSRUJEVFZISmNmYzJhUU5sZUJ5Z2FJSHpWbmZZ",
                         awardingBody = CredentialSubject.AwardingOpportunity.AwardingBody(
                             id = "did:ebsi:2A9BZ9SUe6BatacSpvs1V5CdjHvLpQ7bEsi2Jb6LdHKnQxaN",
-                            // Some issuer do not support eidasLegalIdentifier yet
-                            // eidasLegalIdentifier = "Unknown",
+                            eidasLegalIdentifier = "Unknown",
                             registration = "0597065J",
                             preferredName = "Leaston University",
                             homepage = "https://leaston.bcdiploma.com/"
@@ -77,14 +80,21 @@ data class VerifiableDiploma(
                         )
                     )
                 ),
-                //  EBSI does not support credentialStatus yet
-                //  credentialStatus = CredentialStatus(
-                //      id = "https://essif.europa.eu/status/education#higherEducation#51e42fda-cb0a-4333-b6a6-35cb147e1a88",
-                //      type = "CredentialsStatusList2020"
-                //  ),
                 credentialSchema = CredentialSchema(
                     id = "https://api.preprod.ebsi.eu/trusted-schemas-registry/v1/schemas/0xbf78fc08a7a9f28f5479f58dea269d3657f54f13ca37d380cd4e92237fb691dd",
                     type = "JsonSchemaValidator2018"
+                ),
+                credentialStatus = CredentialStatus(
+                    id = "https://essif.europa.eu/status/education#higherEducation#392ac7f6-399a-437b-a268-4691ead8f176",
+                    type = "CredentialStatusList2020"
+                ),
+                evidence = Evidence(
+                    id = "https://essif.europa.eu/tsr-va/evidence/f2aeec97-fc0d-42bf-8ca7-0548192d5678",
+                    type = listOf("DocumentVerification"),
+                    verifier = "did:ebsi:2962fb784df61baa267c8132497539f8c674b37c1244a7a",
+                    evidenceDocument = listOf("Passport"),
+                    subjectPresence = "Physical",
+                    documentPresence = listOf("Physical")
                 )
             )
         }

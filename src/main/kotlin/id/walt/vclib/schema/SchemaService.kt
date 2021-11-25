@@ -1,16 +1,19 @@
 package id.walt.vclib.schema
 
-import com.fasterxml.jackson.databind.node.ObjectNode
 import com.github.victools.jsonschema.generator.*
-import id.walt.vclib.vclist.Europass
-import id.walt.vclib.vclist.VerifiableId
+import id.walt.vclib.Helpers.toCredential
+import id.walt.vclib.credentials.Europass
+import id.walt.vclib.credentials.VerifiableId
+import id.walt.vclib.model.VerifiableCredential
+import net.pwall.json.schema.JSONSchema
 import java.util.*
-import kotlin.reflect.KClass
+
+data class ValidationResult(val valid: Boolean, val errors: List<String>? = null)
 
 object SchemaService {
 
     annotation class PropertyName(val name: String)
-    annotation class Nullable
+    annotation class Required
     annotation class DateTimeFormat
     annotation class JsonIgnore
 
@@ -26,6 +29,7 @@ object SchemaService {
             .withRequiredCheck { getRequiredCheck(it) }
             .withStringFormatResolver { getFormatResolverCheck(it) }
             .withIgnoreCheck { getIgnoreCheck(it) }
+        configBuilder.with(Option.FORBIDDEN_ADDITIONAL_PROPERTIES_BY_DEFAULT)
         SchemaGenerator(configBuilder.build())
     }
 
@@ -47,7 +51,7 @@ object SchemaService {
             .orElse(null)
 
     private fun getRequiredCheck(field: FieldScope) =
-        field.getAnnotationConsideringFieldAndGetter(Nullable::class.java) == null
+        field.getAnnotationConsideringFieldAndGetter(Required::class.java) != null
 
     private fun getFormatResolverCheck(field: FieldScope) = when {
         field.getAnnotationConsideringFieldAndGetterIfSupported(DateTimeFormat::class.java) != null -> "date-time"
@@ -57,5 +61,20 @@ object SchemaService {
     private fun getIgnoreCheck(field: FieldScope) =
         field.getAnnotationConsideringFieldAndGetter(JsonIgnore::class.java) != null
 
-    fun <T : Any> generateSchema(clazz: KClass<T>): ObjectNode = generator.generateSchema(clazz.java)
+    fun <T : Any> generateSchema(clazz: Class<T>): String = generator.generateSchema(clazz).toPrettyString()
+
+    fun generateSchema(vc: VerifiableCredential): String = generateSchema(vc.javaClass)
+
+    fun validateSchema(jsonLdCredential: String): ValidationResult =
+        validateSchema(jsonLdCredential, generateSchema(jsonLdCredential.toCredential()))
+
+    fun validateSchema(jsonLdCredential: String, schema: String): ValidationResult {
+
+        val parsedSchema = JSONSchema.parse(schema)
+        val basicOutput = parsedSchema.validateBasic(jsonLdCredential)
+
+        val errors = basicOutput.errors?.map { it.error }
+
+        return ValidationResult(basicOutput.valid, errors)
+    }
 }

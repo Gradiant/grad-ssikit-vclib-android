@@ -9,7 +9,7 @@ plugins {
 }
 
 group = "id.walt"
-version = "1.5.3"
+version = "1.6-SNAPSHOT"
 
 
 repositories {
@@ -21,7 +21,7 @@ dependencies {
     /* JSON */
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.0")
     implementation("com.github.victools:jsonschema-generator:4.20.0")
-    implementation("net.pwall.json:json-kotlin-schema:0.29")
+    implementation("net.pwall.json:json-kotlin-schema:0.30")
     implementation("com.beust:klaxon:5.5")
 
     /* Logging */
@@ -55,7 +55,7 @@ publishing {
     publications {
         create<MavenPublication>("mavenJava") {
             pom {
-                name.set("Walt.ID SSIKit-VCLib")
+                name.set("waltid-ssikit-vclib")
                 description.set("Typesafe implementation of W3C Verifiable Credentials in order to facilitate interoperability among various applications.")
                 url.set("https://walt.id")
             }

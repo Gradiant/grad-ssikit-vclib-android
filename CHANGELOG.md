@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [1.6.0] - 2021-11-24
+
+-   Introduced 'Required' annotation for schema generation
+-   Added FORBIDDEN_ADDITIONAL_PROPERTIES_BY_DEFAULT for all generated json schemas
+-   Added schema-validation function to SchemaService
+-   Updated template of VerifiableDiploma & University Degree
+-   Added VcUtils (previously in SSI Kit)
+
+## [1.5.4] - 2021-11-20
+
+-   Added eidasLegalIdentifier to VerifiableDiploma
+
 ## [1.5.3] - 2021-11-07
 
 -   Added DNSpublicKey to GaiaxCredential
@@ -113,7 +125,11 @@ All notable changes to this project will be documented in this file.
 
 -   Initial release
 
-[Unreleased]: https://github.com/walt-id/waltid-ssikit-vclib/compare/1.5.3...HEAD
+[Unreleased]: https://github.com/walt-id/waltid-ssikit-vclib/compare/1.6.0...HEAD
+
+[1.6.0]: https://github.com/walt-id/waltid-ssikit-vclib/compare/1.5.4...1.6.0
+
+[1.5.4]: https://github.com/walt-id/waltid-ssikit-vclib/compare/1.5.3...1.5.4
 
 [1.5.3]: https://github.com/walt-id/waltid-ssikit-vclib/compare/1.5.2...1.5.3
 
