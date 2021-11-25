@@ -2,6 +2,8 @@ package id.walt.vclib
 
 import com.beust.klaxon.Klaxon
 import com.nimbusds.jwt.SignedJWT
+import id.walt.vclib.adapter.NestedVCs
+import id.walt.vclib.adapter.nestedVCsConverter
 import id.walt.vclib.model.VerifiableCredential
 import id.walt.vclib.registry.VcTypeRegistry
 import id.walt.vclib.registry.VerifiableCredentialMetadata
