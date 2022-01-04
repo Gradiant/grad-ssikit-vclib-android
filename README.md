@@ -24,14 +24,14 @@ Typesafe implementation of W3C Verifiable Credentials in order to facilitate int
 
 Add the dependency using Gradle:
 
-    implementation("id.walt:waltid-ssikit-vclib:1.6.0")
+    implementation("id.walt:waltid-ssikit-vclib:1.6.2")
     
 or Maven:
 
     <dependency>
         <groupId>id.walt</groupId>
         <artifactId>waltid-ssikit-vclib</artifactId>
-        <version>1.6.0</version>
+        <version>1.6.2</version>
     </dependency>
     
 ### Create a credential
@@ -85,4 +85,3 @@ val issuer = when (credential) {
 ## License
 
 The VcLib by walt.id is Open Source software released under the [Apache 2.0 license](https://www.apache.org/licenses/LICENSE-2.0.html).
-
