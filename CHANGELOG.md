@@ -4,6 +4,25 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [1.7.0] - 2022-01-03
+
+-   Refactoring of VerifiableCredential data model
+-   removal of redundant helper and utility objects (VcLibManager, VcUtils, Helpers and Defaults)
+
+## [1.6.3] - 2021-12-28
+
+-   Added ProofOfResidence credential
+
+## [1.6.2] - 2021-12-03
+
+-   Fixed Json-schema verification for VerifiablePresentations
+-   Added VerifiableVaccinationCertificate 
+-   Addded GaiaxServiceOffering
+
+## [1.6.1] - 2021-11-30
+
+-   Added GaiaxSelfDescription credential
+
 ## [1.6.0] - 2021-11-24
 
 -   Introduced 'Required' annotation for schema generation
@@ -125,7 +144,15 @@ All notable changes to this project will be documented in this file.
 
 -   Initial release
 
-[Unreleased]: https://github.com/walt-id/waltid-ssikit-vclib/compare/1.6.0...HEAD
+[Unreleased]: https://github.com/walt-id/waltid-ssikit-vclib/compare/1.7.0...HEAD
+
+[1.7.0]: https://github.com/walt-id/waltid-ssikit-vclib/compare/1.6.3...1.7.0
+
+[1.6.3]: https://github.com/walt-id/waltid-ssikit-vclib/compare/1.6.2...1.6.3
+
+[1.6.2]: https://github.com/walt-id/waltid-ssikit-vclib/compare/1.6.1...1.6.2
+
+[1.6.1]: https://github.com/walt-id/waltid-ssikit-vclib/compare/1.6.0...1.6.1
 
 [1.6.0]: https://github.com/walt-id/waltid-ssikit-vclib/compare/1.5.4...1.6.0
 

@@ -8,6 +8,33 @@
         "type" : "string"
       }
     },
+    "billing" : {
+      "type" : "object",
+      "properties" : {
+        "paymentModel" : {
+          "type" : "object",
+          "properties" : {
+            "frequenceOfPayment" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            },
+            "value" : {
+              "type" : "string"
+            }
+          },
+          "additionalProperties" : false
+        },
+        "price" : {
+          "type" : "string"
+        },
+        "unit" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
     "credentialSchema" : {
       "type" : "object",
       "properties" : {
@@ -23,16 +50,40 @@
     "credentialSubject" : {
       "type" : "object",
       "properties" : {
-        "birthDate" : {
+        "dependsOn" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "description" : {
           "type" : "string"
         },
-        "givenName" : {
+        "hasCertifications" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "hasMarketingImage" : {
+          "type" : "string"
+        },
+        "hasName" : {
+          "type" : "string"
+        },
+        "hasVersion" : {
           "type" : "string"
         },
         "id" : {
           "type" : "string"
         },
+        "providedBy" : {
+          "type" : "string"
+        },
         "type" : {
+          "type" : "string"
+        },
+        "utilizes" : {
           "type" : "array",
           "items" : {
             "type" : "string"
@@ -40,6 +91,9 @@
         }
       },
       "additionalProperties" : false
+    },
+    "description" : {
+      "type" : "string"
     },
     "expirationDate" : {
       "type" : "string"
@@ -51,6 +105,15 @@
       "type" : "string"
     },
     "issuer" : {
+      "type" : "string"
+    },
+    "keywords" : {
+      "type" : "array",
+      "items" : {
+        "type" : "string"
+      }
+    },
+    "modified" : {
       "type" : "string"
     },
     "proof" : {
@@ -83,6 +146,18 @@
       },
       "additionalProperties" : false
     },
+    "providedBy" : {
+      "type" : "string"
+    },
+    "provisionType" : {
+      "type" : "string"
+    },
+    "serviceModel" : {
+      "type" : "string"
+    },
+    "serviceTitle" : {
+      "type" : "string"
+    },
     "type" : {
       "type" : "array",
       "items" : {
@@ -90,6 +165,12 @@
       }
     },
     "validFrom" : {
+      "type" : "string"
+    },
+    "version" : {
+      "type" : "string"
+    },
+    "webAddress" : {
       "type" : "string"
     }
   },

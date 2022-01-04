@@ -20,28 +20,28 @@
       },
       "additionalProperties" : false
     },
+    "credentialStatus" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "type" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
     "credentialSubject" : {
       "type" : "object",
       "properties" : {
-        "DNSpublicKey" : {
-          "type" : "string"
-        },
-        "brandName" : {
-          "type" : "string"
-        },
-        "commercialRegister" : {
+        "address" : {
           "type" : "object",
           "properties" : {
             "countryName" : {
               "type" : "string"
             },
             "locality" : {
-              "type" : "string"
-            },
-            "organizationName" : {
-              "type" : "string"
-            },
-            "organizationUnit" : {
               "type" : "string"
             },
             "postalCode" : {
@@ -53,71 +53,62 @@
           },
           "additionalProperties" : false
         },
-        "corporateEmailAddress" : {
+        "dateOfBirth" : {
           "type" : "string"
         },
-        "ethereumAddress" : {
-          "type" : "object",
-          "properties" : {
-            "id" : {
-              "type" : "string"
-            }
-          },
-          "additionalProperties" : false
+        "familyName" : {
+          "type" : "string"
+        },
+        "familyStatus" : {
+          "type" : "string"
+        },
+        "firstNames" : {
+          "type" : "string"
+        },
+        "gender" : {
+          "type" : "string"
         },
         "id" : {
           "type" : "string"
         },
-        "individualContactLegal" : {
+        "identificationNumber" : {
           "type" : "string"
         },
-        "individualContactTechnical" : {
+        "nationality" : {
           "type" : "string"
-        },
-        "jurisdiction" : {
-          "type" : "string"
-        },
-        "legalForm" : {
-          "type" : "string"
-        },
-        "legalRegistrationNumber" : {
-          "type" : "string"
-        },
-        "legallyBindingAddress" : {
-          "type" : "object",
-          "properties" : {
-            "countryName" : {
-              "type" : "string"
-            },
-            "locality" : {
-              "type" : "string"
-            },
-            "postalCode" : {
-              "type" : "string"
-            },
-            "streetAddress" : {
-              "type" : "string"
-            }
-          },
-          "additionalProperties" : false
-        },
-        "legallyBindingName" : {
-          "type" : "string"
-        },
-        "trustState" : {
-          "type" : "string"
-        },
-        "webAddress" : {
-          "type" : "object",
-          "properties" : {
-            "url" : {
-              "type" : "string"
-            }
-          },
-          "additionalProperties" : false
         }
       },
       "additionalProperties" : false
+    },
+    "evidence" : {
+      "type" : "array",
+      "items" : {
+        "type" : "object",
+        "properties" : {
+          "documentPresence" : {
+            "type" : "string"
+          },
+          "evidenceDocument" : {
+            "type" : "string"
+          },
+          "id" : {
+            "type" : "string"
+          },
+          "subjectPresence" : {
+            "type" : "string"
+          },
+          "type" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "verifier" : {
+            "type" : "string"
+          }
+        },
+        "additionalProperties" : false
+      }
     },
     "expirationDate" : {
       "type" : "string"
@@ -160,6 +151,9 @@
         }
       },
       "additionalProperties" : false
+    },
+    "title" : {
+      "type" : "string"
     },
     "type" : {
       "type" : "array",
