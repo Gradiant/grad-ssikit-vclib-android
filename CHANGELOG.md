@@ -4,6 +4,65 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [1.17.0] - 2022-03-17
+
+-   Updated Gaia-X Participant Credential according to <https://github.com/walt-id/waltid-ssikit-vclib/issues/43>
+
+## [1.16.0] - 2022-03-12
+
+-   Added missing fields to Europass Credential <https://github.com/walt-id/waltid-ssikit-vclib/pull/41>
+
+## [1.15.0] - 2022-02-16
+
+-   Add missing fields to europass learning specification <https://github.com/walt-id/waltid-ssikit-vclib/pull/40>
+
+## [1.4.1] - 2022-02-03
+
+## [1.14.0] - 2022-02-03
+
+-   Europass update <https://github.com/walt-id/waltid-ssikit-vclib/pull/35> thanks to @ohylli
+-   Support of recursive references in JSON schema validation by @atuffreau-bcd <https://github.com/walt-id/waltid-ssikit-vclib/pull/36>
+
+## [1.13.0] - 2022-01-31
+
+## [1.12.0] - 2022-01-27
+
+-   <https://github.com/walt-id/waltid-ssikit-vclib/pull/33>
+-   Updated Eurpass and ParticipantCredential
+
+## [1.11.1] - 2022-01-24
+
+-   Remove dummy properties from gaiax kyc credential
+
+## [1.11.0] - 2022-01-24
+
+-   Use github links for credential schema ids, where the actual schema id is not yet known
+
+## [1.10.0] - 2022-01-20
+
+-   Renamed EuropeanBankCredential to EuropeanBankIdentity
+-   Pretty VC encoding by: encodePretty()
+
+## [1.9.0] - 2022-01-19
+
+-   Added EuropeanBankCredential
+
+## [1.8.0] - 2022-01-13
+
+-   Moved Gaiax credentails to a dedicated folder
+-   Following Gaiax credentials were added (data-models not finalized)
+    -   DataConsortium
+    -   DataSelfDescription
+    -   Iso27001Credential
+    -   KybCredential
+    -   KybMonoCredential
+    -   KycCredential
+    -   ParticipantCredential
+
+## [1.7.1] - 2022-01-05
+
+-   fix VC challenge property
+
 ## [1.7.0] - 2022-01-03
 
 -   Refactoring of VerifiableCredential data model
@@ -100,30 +159,13 @@ All notable changes to this project will be documented in this file.
         VcTemplateManager.loadTemplate(listOf("VerifiableCredential, VerifiableAttestation, Europass"))
         ```
 -   Added template id listing
-    -   ```kotlin
-        VcTemplateManager.getTemplateList()
-        ```
--   Added toMap method for VCs
-    -   ```kotlin
-        VerifiableCredential.toMap(): Map<String, Any>
-        ```
+-   Added toMap method toMap() for VCs
+-
 
 ## [1.3.0] - 2021-07-28
 
--   reworked VC registration to allow for VC metadata, e.g.
-
-    ```kotlin
-    // => Registration
-    VcLibManager.register<UniversityDegree>(UniversityDegree)
-
-    // OR VcLibManager.register<UniversityDegree>(UniversityDegree.Companion)
-
-    // => Companion object of VC
-    companion object : VerifiableCredentialMetadata(
-        type = listOf("VerifiableCredential", "UniversityDegreeCredential"),
-    )
-    ```
--   moved TemplateManager to Walt.ID VC-Lib (see id.walt.vclib.templates.VcTemplateManager)
+-   reworked VC registration to allow for VC metadata
+-   moved TemplateManager VC-Lib (see id.walt.vclib.templates.VcTemplateManager)
 
 ## [1.2.0] - 2021-07-28
 
@@ -144,7 +186,39 @@ All notable changes to this project will be documented in this file.
 
 -   Initial release
 
-[Unreleased]: https://github.com/walt-id/waltid-ssikit-vclib/compare/1.7.0...HEAD
+[Unreleased]: https://github.com/walt-id/waltid-ssikit-vclib/compare/1.17.0...HEAD
+
+[1.17.0]: https://github.com/walt-id/waltid-ssikit-vclib/compare/1.16.0...1.17.0
+
+[1.16.0]: https://github.com/walt-id/waltid-ssikit-vclib/compare/1.15.0...1.16.0
+
+[1.15.0-SNAPSHOT]: https://github.com/walt-id/waltid-ssikit-vclib/compare/1.15.0-SNAPSHOT...1.15.0-SNAPSHOT
+
+[1.15.0-SNAPSHOT]: https://github.com/walt-id/waltid-ssikit-vclib/compare/1.15.0-SNAPSHOT...1.15.0-SNAPSHOT
+
+[1.15.0-SNAPSHOT]: https://github.com/walt-id/waltid-ssikit-vclib/compare/1.15.0...1.15.0-SNAPSHOT
+
+[1.15.0]: https://github.com/walt-id/waltid-ssikit-vclib/compare/1.4.1...1.15.0
+
+[1.4.1]: https://github.com/walt-id/waltid-ssikit-vclib/compare/1.14.0...1.4.1
+
+[1.14.0]: https://github.com/walt-id/waltid-ssikit-vclib/compare/1.13.0...1.14.0
+
+[1.13.0]: https://github.com/walt-id/waltid-ssikit-vclib/compare/1.12.0...1.13.0
+
+[1.12.0]: https://github.com/walt-id/waltid-ssikit-vclib/compare/1.11.1...1.12.0
+
+[1.11.1]: https://github.com/walt-id/waltid-ssikit-vclib/compare/1.11.0...1.11.1
+
+[1.11.0]: https://github.com/walt-id/waltid-ssikit-vclib/compare/1.10.0...1.11.0
+
+[1.10.0]: https://github.com/walt-id/waltid-ssikit-vclib/compare/1.9.0...1.10.0
+
+[1.9.0]: https://github.com/walt-id/waltid-ssikit-vclib/compare/1.8.0...1.9.0
+
+[1.8.0]: https://github.com/walt-id/waltid-ssikit-vclib/compare/1.7.1...1.8.0
+
+[1.7.1]: https://github.com/walt-id/waltid-ssikit-vclib/compare/1.7.0...1.7.1
 
 [1.7.0]: https://github.com/walt-id/waltid-ssikit-vclib/compare/1.6.3...1.7.0
 

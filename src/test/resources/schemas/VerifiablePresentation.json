@@ -8,10 +8,19 @@
         "type" : "string"
       }
     },
+    "expirationDate" : {
+      "type" : "string"
+    },
     "holder" : {
       "type" : "string"
     },
     "id" : {
+      "type" : "string"
+    },
+    "issuanceDate" : {
+      "type" : "string"
+    },
+    "issued" : {
       "type" : "string"
     },
     "proof" : {
@@ -44,13 +53,10 @@
       },
       "additionalProperties" : false
     },
-    "type" : {
-      "type" : "array",
-      "items" : {
-        "type" : "string"
-      }
+    "validFrom" : {
+      "type" : "string"
     }
   },
-  "required" : [ "@context", "type" ],
-  "additionalProperties" : true
+  "required" : [ "@context" ],
+  "additionalProperties" : false
 }

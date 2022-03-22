@@ -8,33 +8,6 @@
         "type" : "string"
       }
     },
-    "billing" : {
-      "type" : "object",
-      "properties" : {
-        "paymentModel" : {
-          "type" : "object",
-          "properties" : {
-            "frequenceOfPayment" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            },
-            "value" : {
-              "type" : "string"
-            }
-          },
-          "additionalProperties" : false
-        },
-        "price" : {
-          "type" : "string"
-        },
-        "unit" : {
-          "type" : "string"
-        }
-      },
-      "additionalProperties" : false
-    },
     "credentialSchema" : {
       "type" : "object",
       "properties" : {
@@ -50,40 +23,73 @@
     "credentialSubject" : {
       "type" : "object",
       "properties" : {
-        "dependsOn" : {
-          "type" : "array",
-          "items" : {
-            "type" : "string"
-          }
-        },
-        "description" : {
+        "brandName" : {
           "type" : "string"
         },
-        "hasCertifications" : {
-          "type" : "array",
-          "items" : {
-            "type" : "string"
-          }
-        },
-        "hasMarketingImage" : {
-          "type" : "string"
-        },
-        "hasName" : {
-          "type" : "string"
-        },
-        "hasVersion" : {
+        "corporateEmailAddress" : {
           "type" : "string"
         },
         "id" : {
           "type" : "string"
         },
-        "providedBy" : {
+        "individualContactLegal" : {
           "type" : "string"
         },
-        "type" : {
+        "individualContactTechnical" : {
           "type" : "string"
         },
-        "utilizes" : {
+        "jurisdiction" : {
+          "type" : "string"
+        },
+        "legalForm" : {
+          "type" : "string"
+        },
+        "legalRegistrationNumber" : {
+          "type" : "string"
+        },
+        "legallyBindingAddress" : {
+          "type" : "object",
+          "properties" : {
+            "countryName" : {
+              "type" : "string"
+            },
+            "locality" : {
+              "type" : "string"
+            },
+            "postalCode" : {
+              "type" : "string"
+            },
+            "streetAddress" : {
+              "type" : "string"
+            }
+          },
+          "additionalProperties" : false
+        },
+        "legallyBindingName" : {
+          "type" : "string"
+        },
+        "webAddress" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "expirationDate" : {
+      "type" : "string"
+    },
+    "id" : {
+      "type" : "string"
+    },
+    "iso2700Criteria" : {
+      "type" : "object",
+      "properties" : {
+        "certifcateName" : {
+          "type" : "string"
+        },
+        "certificateNr" : {
+          "type" : "string"
+        },
+        "scope" : {
           "type" : "array",
           "items" : {
             "type" : "string"
@@ -92,28 +98,13 @@
       },
       "additionalProperties" : false
     },
-    "description" : {
-      "type" : "string"
-    },
-    "expirationDate" : {
-      "type" : "string"
-    },
-    "id" : {
-      "type" : "string"
-    },
     "issuanceDate" : {
       "type" : "string"
     },
-    "issuer" : {
+    "issued" : {
       "type" : "string"
     },
-    "keywords" : {
-      "type" : "array",
-      "items" : {
-        "type" : "string"
-      }
-    },
-    "modified" : {
+    "issuer" : {
       "type" : "string"
     },
     "proof" : {
@@ -146,18 +137,6 @@
       },
       "additionalProperties" : false
     },
-    "providedBy" : {
-      "type" : "string"
-    },
-    "provisionType" : {
-      "type" : "string"
-    },
-    "serviceModel" : {
-      "type" : "string"
-    },
-    "serviceTitle" : {
-      "type" : "string"
-    },
     "type" : {
       "type" : "array",
       "items" : {
@@ -165,12 +144,6 @@
       }
     },
     "validFrom" : {
-      "type" : "string"
-    },
-    "version" : {
-      "type" : "string"
-    },
-    "webAddress" : {
       "type" : "string"
     }
   },

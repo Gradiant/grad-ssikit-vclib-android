@@ -6,7 +6,6 @@ import id.walt.vclib.credentials.VerifiableId
 import id.walt.vclib.credentials.VerifiablePresentation
 import id.walt.vclib.model.VerifiableCredential
 import id.walt.vclib.model.toCredential
-import net.pwall.json.schema.JSONSchema
 import java.util.*
 
 data class ValidationResult(val valid: Boolean, val errors: List<String>? = null)
@@ -17,6 +16,7 @@ object SchemaService {
     annotation class Required
     annotation class DateTimeFormat
     annotation class JsonIgnore
+    annotation class ReadOnly
 
     private val generator = SchemaGeneratorConfigBuilder(
         SchemaVersion.DRAFT_7,
@@ -74,15 +74,9 @@ object SchemaService {
             }
         })
 
-    fun validateSchema(jsonLdCredential: String, schema: String): ValidationResult {
-
-        val parsedSchema = JSONSchema.parse(schema)
-        val basicOutput = parsedSchema.validateBasic(jsonLdCredential)
-
-        val errors = basicOutput.errors?.map { it.error }
-
-        return ValidationResult(basicOutput.valid, errors)
-    }
+    fun validateSchema(jsonLdCredential: String, schema: String) = SchemaValidatorFactory.get(schema)
+        .validate(jsonLdCredential)
+        .let { ValidationResult(it.isEmpty(), it.map { error -> error.toString() }.toList()) }
 
     val vpSchema = "{\n" +
             "  \"\$schema\" : \"http://json-schema.org/draft-07/schema#\",\n" +

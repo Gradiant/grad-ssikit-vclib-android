@@ -36,7 +36,10 @@
       "type" : "object",
       "properties" : {
         "currentAddress" : {
-          "type" : "string"
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
         },
         "dateOfBirth" : {
           "type" : "string"
@@ -53,6 +56,21 @@
         "id" : {
           "type" : "string"
         },
+        "identifier" : {
+          "type" : "array",
+          "items" : {
+            "type" : "object",
+            "properties" : {
+              "schemeID" : {
+                "type" : "string"
+              },
+              "value" : {
+                "type" : "string"
+              }
+            },
+            "additionalProperties" : false
+          }
+        },
         "nameAndFamilyNameAtBirth" : {
           "type" : "string"
         },
@@ -66,37 +84,40 @@
       "additionalProperties" : false
     },
     "evidence" : {
-      "type" : "object",
-      "properties" : {
-        "documentPresence" : {
-          "type" : "array",
-          "items" : {
+      "type" : "array",
+      "items" : {
+        "type" : "object",
+        "properties" : {
+          "documentPresence" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "evidenceDocument" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "id" : {
+            "type" : "string"
+          },
+          "subjectPresence" : {
+            "type" : "string"
+          },
+          "type" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "verifier" : {
             "type" : "string"
           }
         },
-        "evidenceDocument" : {
-          "type" : "array",
-          "items" : {
-            "type" : "string"
-          }
-        },
-        "id" : {
-          "type" : "string"
-        },
-        "subjectPresence" : {
-          "type" : "string"
-        },
-        "type" : {
-          "type" : "array",
-          "items" : {
-            "type" : "string"
-          }
-        },
-        "verifier" : {
-          "type" : "string"
-        }
-      },
-      "additionalProperties" : false
+        "additionalProperties" : false
+      }
     },
     "expirationDate" : {
       "type" : "string"
@@ -105,6 +126,9 @@
       "type" : "string"
     },
     "issuanceDate" : {
+      "type" : "string"
+    },
+    "issued" : {
       "type" : "string"
     },
     "issuer" : {
