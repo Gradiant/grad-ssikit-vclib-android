@@ -1,15 +1,15 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm") version "1.5.21"
-    kotlin("plugin.serialization") version "1.5.21"
+    kotlin("jvm") version "1.6.10"
+    kotlin("plugin.serialization") version "1.6.10"
     jacoco
     application
     `maven-publish`
 }
 
 group = "id.walt"
-version = "1.7-SNAPSHOT"
+version = "1.17.0-SNAPSHOT"
 
 
 repositories {
@@ -19,32 +19,33 @@ repositories {
 
 dependencies {
     /* JSON */
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.1")
-    implementation("com.github.victools:jsonschema-generator:4.20.0")
-    implementation("net.pwall.json:json-kotlin-schema:0.30")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2")
+    implementation("com.github.victools:jsonschema-generator:4.21.0")
+    implementation("com.networknt:json-schema-validator:1.0.66")
+    implementation("net.pwall.json:json-kotlin-schema:0.31")
     implementation("com.beust:klaxon:5.5")
 
     /* Logging */
     //ANDROID PORT
     //implementation("org.lighthousegames:logging-jvm:1.0.0")
     //ANDROID PORT
-    implementation("org.slf4j:slf4j-simple:1.7.32")
+    implementation("org.slf4j:slf4j-simple:1.7.36")
 
     /* Kotlin */
 
     // Reflection
-    implementation("org.jetbrains.kotlin:kotlin-reflect:1.5.21")
+    implementation("org.jetbrains.kotlin:kotlin-reflect:1.6.0")
 
     // Kotlin
-    implementation("org.jetbrains.kotlin:kotlin-stdlib:1.5.21")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib:1.6.0")
 
     /* JWT */
-    implementation("com.nimbusds:nimbus-jose-jwt:9.15.2")
+    implementation("com.nimbusds:nimbus-jose-jwt:9.19")
 
     /* Testing */
-    testImplementation("io.kotest:kotest-runner-junit5:4.6.3")
-    testImplementation("io.kotest:kotest-assertions-core:4.6.3")
-    testImplementation("io.kotest:kotest-assertions-json:4.6.3")
+    testImplementation("io.kotest:kotest-runner-junit5:5.1.0")
+    testImplementation("io.kotest:kotest-assertions-core:5.1.0")
+    testImplementation("io.kotest:kotest-assertions-json:5.1.0")
 }
 
 tasks.withType<Test> {
@@ -77,6 +78,12 @@ publishing {
                 password = secretMavenPassword
             }
         }
+    }
+}
+
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(16))
     }
 }
 
