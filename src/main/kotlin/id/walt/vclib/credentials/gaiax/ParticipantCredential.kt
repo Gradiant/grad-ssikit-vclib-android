@@ -23,29 +23,18 @@ data class ParticipantCredential(
     @Json(serializeNull = false) var credentialStatus: CredentialStatus? = null,
     @Json(serializeNull = false) override var proof: Proof? = null,
 ) : AbstractVerifiableCredential<ParticipantCredential.ParticipantCredentialSubject>(type) {
-/*    data class ParticipantCredentialSubjectOld(
-        override var id: String?,
-        @Json(serializeNull = false) var type: String? = null,
-        @Json(serializeNull = false) var programName: String? = null,
-        @Json(serializeNull = false) val domain: String? = null,
-        @Json(serializeNull = false) val ethereumAddress: String? = null,
-    ) : CredentialSubject()
-
-    data class ParticipantCredentialNaturalSubject(
-        override var id: String?,
-        @Json(serializeNull = false) val taxAddress: List<String>? = null,
-        @Json(serializeNull = false) val livingAddress: List<String>? = null,
-    ) : CredentialSubject()*/
 
     data class ParticipantCredentialSubject(
         override var id: String?,
-        @Json(serializeNull = false) var companyNumber: String? = null,
-        @Json(serializeNull = false) var companyName: String? = null,
-        @Json(serializeNull = false) var headquarterCountry: String? = null,
-        @Json(serializeNull = false) var legalCountry: String? = null,
-        @Json(serializeNull = false) var lei: String? = null,
+        @Json(serializeNull = false) var hasRegistrationNumber: String? = null,
+        @Json(serializeNull = false) var hasLegallyBindingName: String? = null,
+        @Json(serializeNull = false) var hasJurisdiction: String? = null,
+        @Json(serializeNull = false) var hasCountry: String? = null,
+        @Json(serializeNull = false) var leiCode: String? = null,
+        @Json(serializeNull = false) var ethereumAddress: String? = null,
         @Json(serializeNull = false) var parentOrganisation: String? = null,
         @Json(serializeNull = false) var subOrganisation: String? = null,
+        @Json(serializeNull = false) var hash: String? = null
     ) : CredentialSubject()
 
     companion object : VerifiableCredentialMetadata(
@@ -58,13 +47,15 @@ data class ParticipantCredential(
                 expirationDate = "2022-01-06T20:38:38Z",
                 credentialSubject = ParticipantCredentialSubject(
                     id = "did:web:delta-dao.com",
-                    companyNumber = "HRB 170364",
-                    companyName = "deltaDAO AG",
-                    headquarterCountry = "GER",
-                    legalCountry = "GER",
-                    lei = "5299004GII7NEZFIFE28",
+                    hasRegistrationNumber = "DEK1101R.HRB170364",
+                    hasLegallyBindingName = "deltaDAO AG",
+                    hasJurisdiction = "GER",
+                    hasCountry = "GER",
+                    leiCode = "391200FJBNU0YW987L26",
+                    ethereumAddress = "0x4C84a36fCDb7Bc750294A7f3B5ad5CA8F74C4A52",
                     parentOrganisation = "",
                     subOrganisation = "",
+                    hash = "9ecf754ffdad0c6de238f60728a90511780b2f7dbe2f0ea015115515f3f389cd"
                 ),
                 credentialSchema = CredentialSchema(
                     id = "https://raw.githubusercontent.com/walt-id/waltid-ssikit-vclib/master/src/test/resources/schemas/ParticipantCredential.json",

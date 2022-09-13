@@ -35,38 +35,54 @@
     "credentialSubject" : {
       "type" : "object",
       "properties" : {
-        "ethereumAddress" : {
-          "type" : "string"
-        },
-        "hasCountry" : {
-          "type" : "string"
-        },
-        "hasJurisdiction" : {
-          "type" : "string"
-        },
-        "hasLegallyBindingName" : {
-          "type" : "string"
-        },
-        "hasRegistrationNumber" : {
-          "type" : "string"
-        },
-        "hash" : {
-          "type" : "string"
+        "holder" : {
+          "type" : "object",
+          "properties" : {
+            "constraints" : {
+              "type" : "object",
+              "additionalProperties" : false
+            },
+            "grant" : {
+              "type" : "string"
+            },
+            "id" : {
+              "type" : "string"
+            },
+            "role" : {
+              "type" : "string"
+            }
+          },
+          "additionalProperties" : false
         },
         "id" : {
           "type" : "string"
         },
-        "leiCode" : {
-          "type" : "string"
-        },
-        "parentOrganisation" : {
-          "type" : "string"
-        },
-        "subOrganisation" : {
+        "policySchemaURI" : {
           "type" : "string"
         }
       },
       "additionalProperties" : false
+    },
+    "evidence" : {
+      "type" : "array",
+      "items" : {
+        "type" : "object",
+        "properties" : {
+          "evidenceValue" : {
+            "type" : "string"
+          },
+          "id" : {
+            "type" : "string"
+          },
+          "type" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          }
+        },
+        "additionalProperties" : false
+      }
     },
     "expirationDate" : {
       "type" : "string"

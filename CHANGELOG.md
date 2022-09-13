@@ -4,6 +4,36 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [1.22.0] - 2022-06-20
+
+## [1.22.0] - 2022-06-20
+
+-   Added Gaia-X LegalPerson Credential 
+-   Updated ParticipantCredential and added "hash"
+
+## [1.21.0] - 2022-06-15
+
+-   Instructions how to add VC templates including link to <https://vc-creator.walt.id/>
+
+## [1.20.0] - 2022-06-13
+
+-   Added Open Badge 3.0 credential <https://github.com/walt-id/waltid-ssikit-vclib/pull/51>
+
+## [1.19.0] - 2022-05-19
+
+-   Added Verifiable Mandate <https://github.com/walt-id/waltid-ssikit-vclib/pull/49>
+
+## [1.18.1] - 2022-05-08
+
+-   Bump dependencies 
+
+## [1.18.0] - 2022-03-24
+
+-   Added AmletCredential <https://github.com/walt-id/waltid-ssikit-vclib/pull/46>
+-   Added PeerReview credential <https://github.com/walt-id/waltid-ssikit-vclib/pull/47>
+
+## [1.8.0] - 2022-03-22
+
 ## [1.17.0] - 2022-03-17
 
 -   Updated Gaia-X Participant Credential according to <https://github.com/walt-id/waltid-ssikit-vclib/issues/43>
@@ -186,7 +216,25 @@ All notable changes to this project will be documented in this file.
 
 -   Initial release
 
-[Unreleased]: https://github.com/walt-id/waltid-ssikit-vclib/compare/1.17.0...HEAD
+[Unreleased]: https://github.com/walt-id/waltid-ssikit-vclib/compare/1.22.0...HEAD
+
+[1.22.0]: https://github.com/walt-id/waltid-ssikit-vclib/compare/1.22.0...1.22.0
+
+[1.22.0]: https://github.com/walt-id/waltid-ssikit-vclib/compare/1.21.0...1.22.0
+
+[1.21.0]: https://github.com/walt-id/waltid-ssikit-vclib/compare/1.20.0...1.21.0
+
+[1.20.0]: https://github.com/walt-id/waltid-ssikit-vclib/compare/1.19.0...1.20.0
+
+[1.19.0]: https://github.com/walt-id/waltid-ssikit-vclib/compare/1.18.1...1.19.0
+
+[1.18.1]: https://github.com/walt-id/waltid-ssikit-vclib/compare/1.18.0...1.18.1
+
+[1.18.0]: https://github.com/walt-id/waltid-ssikit-vclib/compare/1.8.0...1.18.0
+
+[1.17.1]: https://github.com/walt-id/waltid-ssikit-vclib/compare/1.17.1...1.17.1
+
+[1.17.1]: https://github.com/walt-id/waltid-ssikit-vclib/compare/1.17.0...1.17.1
 
 [1.17.0]: https://github.com/walt-id/waltid-ssikit-vclib/compare/1.16.0...1.17.0
 
