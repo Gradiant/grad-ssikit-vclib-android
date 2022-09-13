@@ -19,7 +19,7 @@ object VcTypeRegistry {
 
     init {
         //ANDROID PORT
-        //log.info { "Registering default templates" }
+        //log.debug { "Registering default templates" }
         //ANDROID PORT
         register<PermanentResidentCard>(PermanentResidentCard)
         register<VerifiableAttestation>(VerifiableAttestation)
@@ -33,6 +33,9 @@ object VcTypeRegistry {
         register<ProofOfResidence>(ProofOfResidence)
         register<EuropeanBankIdentity>(EuropeanBankIdentity)
 
+        //Amlet
+        register<AmletCredential>(AmletCredential)
+
         // Gaiax
         register<GaiaxCredential>(GaiaxCredential)
         register<DataConsortium>(DataConsortium)
@@ -43,6 +46,14 @@ object VcTypeRegistry {
         register<KybMonoCredential>(KybMonoCredential)
         register<KycCredential>(KycCredential)
         register<ParticipantCredential>(ParticipantCredential)
+        register<LegalPerson>(LegalPerson)
+
+        register<PeerReview>(PeerReview)
+
+        // Verifiable mandates
+        register<VerifiableMandate>(VerifiableMandate)
+
+        register<OpenBadgeCredential>(OpenBadgeCredential)
     }
 
     class TypeRegistration(
